@@ -169,6 +169,10 @@ body , main {
   overflow-x: hidden!important; 
 }
 
+.purp-2{
+  width: 100%!important;
+}
+
 /* line 142, ../sass/__reset.scss */
 button, input {
   border: none;
