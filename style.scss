@@ -1,0 +1,353 @@
+$brand-color : #7E349D;
+$brand-color-light: #AE5CE4;
+$brand-secondary-color: #17BBB0;
+
+$breakpoint2: 990px;
+$breakpoint3: 768px;
+
+@function creative-color($color) {
+  @if($color==red){
+    @return #E74C3C;
+  }
+  @elseif($color==blue){
+    @return #6C5CE7;
+  }
+  @elseif($color==green){
+    @return #00B894;
+  }
+  @elseif($color==yellow){
+    @return #F1C40F;
+  }
+  @else if($color==purple){
+    @return #8E44AD;
+  }
+  @else if($color==brand){
+    @return $brand-color
+  }
+  @else if($color==secondary-brand){
+    @return $brand-secondary-color;
+  }
+  @else {
+    @return $brand-color;
+  }
+}
+
+@function bubble-color($num){
+    @if($num==1){
+      @return #BEE3F1;
+    }
+    @elseif($num==2){
+      @return #64D0C8;
+    }
+    @elseif($num==3){
+      @return #D2F1E3;
+    }
+    @elseif($num==4){
+      @return #A29BFE;
+    }
+    @else {
+      @return $brand-color;
+    }
+}
+
+@mixin align($option1:center,$option2:false,$self:false){
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  @if($option1==center) {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  @if($option1==start){
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  @if($option2==center) {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  @if($option2==end) {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+}
+
+@mixin text-color($num){
+  color: rgba(0,0,0,$num);
+}
+
+@mixin pos-center($opt1:center,$opt2:false){
+  @if($opt1==center){
+    left:50%;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+  }
+  @if($opt2==center){
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+}
+
+@mixin transition($value:.3s){
+  -webkit-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+@mixin box-glow($color) {
+  -webkit-box-shadow : 0 0 80px $color!important;
+  box-shadow : 0 0 80px $color!important;
+}
+
+@import "sass/__reset";
+
+
+$colors: red,orange,blue,green,yellow,purple,pink,brand,secondary-brand;
+@each $color in $colors {
+  .#{$color}-color{
+    color: creative-color($color);
+  }
+  .#{$color}-bg-color{
+    background-color: creative-color($color);
+  }
+}
+
+.white{
+  color: white;
+}
+
+header {
+  position: absolute;
+  @include pos-center();
+  .row {
+    nav {
+      @include align();
+
+      .nav-item {
+        .nav-link {
+          @include text-color(.8);
+        }
+      }
+
+      .register {
+        background-color: $brand-color;
+        color: white;
+        font-size: 14px;
+        width: 145px;
+        @include  transition();
+        border: 2px solid $brand-color;
+        @include box-glow($brand-color);
+
+        &:hover {
+          background-color: transparent;
+          color: $brand-color;
+        }
+
+      }
+    }
+
+    .search {
+      @include align(center, end);
+
+      .search-icon {
+        color: $brand-color-light;
+      }
+      .bars-icon {
+        color: $brand-color;
+        display: none;
+      }
+    }
+  }
+}
+
+main {
+  section {
+    @media only screen and (max-width: $breakpoint3) {
+      max-width: none!important;
+    }
+    @include align();
+      .colrellax {
+        @media only screen and (max-width: 950px) {
+          transform: none!important;
+          left:0!important;
+        }
+        left: calc(0% + 50px);
+      }
+      .content {
+        margin-left: -16px;
+
+        @media only screen and (max-width: 950px) {
+          text-align: center !important;
+          float: none !important;
+        }
+          h2 {
+            @media only screen and(max-width: 1200px) {
+              font-size: 1.6rem;
+            }
+          }
+          .more {
+                border: 2px solid $brand-secondary-color !important;
+                font-size: 14px;
+                width: 30px;
+                color: $brand-secondary-color;
+                background-color: transparent;
+                border-radius: 15px;
+                @include transition();
+                &:hover {
+                  background-color: $brand-secondary-color;
+                  color: white;
+                }
+                &:visited{}
+          }
+
+          p {
+            line-height: 2.3;
+          }
+      }
+  }
+  #sec2{
+    @include align(start);
+
+    .cards{
+      direction: ltr!important;
+      z-index: 3;
+      @include align(false,center);
+
+           .item {
+              @include transition(.5s);
+              cursor: pointer;
+              border-radius: 16px!important;
+              padding: 40px 35px!important;
+              span{
+                i{
+                  font-size: 120px;
+                  padding-bottom: 40px;
+
+                }
+              }
+              h5{
+                border-top: 1px solid rgba(0,0,0,.1);
+              }
+              p{
+                @include text-color(.6);
+              }
+          }
+
+      $col:red,yellow,purple,green;
+      @each $color in $col {
+        .#{$color}-hover{
+          &:hover {
+            background-color: creative-color($color)!important;
+            @include transition(.5s);
+            span , p , h5 {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #sec3 {
+    z-index: -1;
+    .circlechart{
+      z-index: 0!important;
+    }
+    background:{
+      image: url("../photos/svg/Union 3.png");
+      repeat: no-repeat;
+      position: 41% -15%;
+      size: 171%;
+    }
+
+    .circular {
+      justify-content: center!important;
+        .circlechart:nth-child(1) {
+          .circle-chart__circle{
+            stroke: creative-color(red);
+          }
+        }
+        .circlechart:nth-child(2) {
+          .circle-chart__circle{
+            stroke: creative-color(blue);
+          }
+        }
+        .circlechart:nth-child(3) {
+          .circle-chart__circle{
+            stroke: creative-color(yellow);
+          }
+        }
+      .circlechart:nth-child(4) {
+        .circle-chart__circle{
+
+        }
+      }
+      .circlechart:nth-child(5) {
+        .circle-chart__circle{
+          stroke: $brand-secondary-color;
+        }
+      }
+      .circlechart:nth-child(6) {
+        .circle-chart__circle{
+          stroke: $brand-color-light;
+        }
+      }
+
+    }
+  }
+
+  #sec2 {
+    background: rgb(110,72,170);
+    background: linear-gradient(83deg, rgba(110,72,170,1) 26%, rgba(126,52,157,1) 64%);
+    width: 100vw!important;
+    position: relative;
+  }
+  #purp-1{
+    transform: none!important;
+    position: absolute;
+    //@include pos-center();
+    //top: 25vh;
+    //left:-50px;
+    //width:2000px;
+    //z-index: 0;
+    left:-3px;
+    top:-260px;
+    pointer-events:none!important;
+    z-index: 1;
+  }
+  #purp-2 {
+    position: absolute;
+    z-index: 1;
+    bottom:-400px;
+    left:-400px;
+  }
+}
+
+
+
+/* ---- particles.js container ---- */
+#particles-js{
+  position:absolute;
+  width: 100vw;
+  height: 100vh;
+  background:{
+    image: url("../photos/svg/undraw_wallet_aym5 (1).svg");
+    repeat: no-repeat;
+    position: 47vw;
+    size: 620px;
+  }
+  z-index: -1000000000000;
+
+  @media only screen and (max-width: 950px) {
+    background: none;
+  }
+}
+
