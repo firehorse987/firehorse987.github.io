@@ -160,6 +160,10 @@ body {
   overflow-x: hidden !important;
 }
 
+main {
+  overflow-y:hidden !important;
+}
+
 /* line 142, ../sass/__reset.scss */
 button, input {
   border: none;
