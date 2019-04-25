@@ -153,39 +153,31 @@ html {
   margin: 0;
 }
 
-/* line 136, ../sass/__reset.scss */
+/* line 135, ../sass/__reset.scss */
 body {
   margin: 0;
   direction: rtl;
   overflow-x: hidden !important;
 }
 
+/* line 141, ../sass/__reset.scss */
 main {
-  overflow-y:hidden !important;
+  overflow-y: hidden !important;
 }
 
-body , main {
-  width: 100vw!important;
-  overflow-x: hidden!important; 
-}
-
-.purp-2{
-  width: 100%!important;
-}
-
-/* line 142, ../sass/__reset.scss */
+/* line 145, ../sass/__reset.scss */
 button, input {
   border: none;
   outline: none;
 }
 
-/* line 147, ../sass/__reset.scss */
+/* line 150, ../sass/__reset.scss */
 img {
   -o-object-fit: cover;
   object-fit: cover;
 }
 
-/* line 152, ../sass/__reset.scss */
+/* line 155, ../sass/__reset.scss */
 a:hover {
   text-decoration: none !important;
 }
@@ -411,7 +403,7 @@ main section {
 }
 /* line 177, ../style.scss */
 main section .colrellax {
-  left: calc(0% + 50px);
+  left: calc(0% + 10px);
 }
 @media only screen and (max-width: 950px) {
   /* line 177, ../style.scss */
