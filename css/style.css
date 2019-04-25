@@ -163,6 +163,7 @@ body {
 /* line 141, ../sass/__reset.scss */
 main {
   overflow-y: hidden !important;
+  overflow-x: hidden !important;
 }
 
 /* line 145, ../sass/__reset.scss */
