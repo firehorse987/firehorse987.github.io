@@ -593,7 +593,7 @@ main #purp-2 {
   position: absolute;
   z-index: 1;
   bottom: -400px;
-  left: -400px;
+  left: -100px!important;
 }
 
 /* ---- particles.js container ---- */
