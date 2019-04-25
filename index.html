@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML >
 <html lang="fa">
     <head>
         <!--<base href="<?= get_template_directory_uri(); ?>/">-->
@@ -9,20 +9,26 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" >
         <link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
         <!--            NECESSARY STUFF         !-->
+        <link rel="icon" href="photos/logo.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="js/Main-jquery.js" type="text/javascript" async></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
         <!--            PLUGINS            !-->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <link rel="stylesheet" href="css/owl.carousel.min.css">
         <link rel="stylesheet" href="css/owl.theme.default.min.css">
         <link rel="stylesheet" href="css/progresscircle.css">
-        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-   
-     
 
+        <script src="js/rellax.min.js" async></script>
+        <script src="js/wow.min.js" async></script>
+        <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
+                <!--integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
+                <!--crossorigin="anonymous">-->
+        <!--</script>-->
+        <script src="js/progresscircle.js" async></script>
 
 
     </head>
@@ -160,15 +166,12 @@
             </section>
         </main>
         <footer></footer>
-        <script src="js/jquery.easeScroll.js"></script> 
+        <script src="js/jquery.easeScroll.js"></script>
         <script>
-             $("html").easeScroll();
+            $("html").easeScroll();
         </script>
-        <script src="js/owl.carousel.min.js" > </script>
-        <script src="js/rellax.min.js"></script>
-         <script src="js/wow.min.js"></script>
-        <script src="js/particle.js"></script> 
-        <script src="js/progresscircle.js"></script>
+        <script src="js/owl.carousel.min.js"> </script>
+        <script src="js/particle.js"></script>
         <script>
             $(function(){
                 $('.circlechart').circlechart();
@@ -178,17 +181,18 @@
                 window.scrollTo(0, 0);
             };
 
-            new WOW().init();
-            var rellax = new Rellax('.rellax', {
-                speed: -2,
-                center: true,
-                wrapper: null,
-                round: true,
-                vertical: true,
-                horizontal: true
-            });
+
+
 
             $(document).ready(function(){
+                var rellax = new Rellax('.rellax', {
+                    speed: -2,
+                    center: true,
+                    wrapper: null,
+                    round: true,
+                    vertical: true,
+                    horizontal: true
+                });
                 $('.owl-carousel').owlCarousel({
                     items: 3,
                     margin:70,
@@ -218,7 +222,7 @@
                     e.preventDefault();
                 });
 
-
+                new WOW().init();
 
             });
         </script>
