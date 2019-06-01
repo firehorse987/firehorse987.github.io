@@ -1,0 +1,48 @@
+.content-triangle {
+  position: absolute;
+  top:-80px;
+  left:0;
+  z-index: 1!important;
+}
+
+.article-card {
+  border-top: 30px solid $brand-color-light;
+  height: 2840px;
+  background: {
+    image:  url("../img/backgrounds/content.svg") ;
+    size: 1120px;
+    repeat: no-repeat;
+    //size: cover;
+    position: top;
+  }
+  position: relative;
+  z-index: 99;
+
+  .article:last-child .article-box {
+    border-bottom: none;
+  }
+  .article {
+
+    .article-box {
+      @extend %brand-border;
+    }
+
+    .article-content{
+      direction: rtl!important;
+      p {
+        line-height: 2.4;
+        font-size: 17px;
+        text-align: justify;
+        font-family: iransans-Medium;
+        @include text-color(.6);
+      }
+    }
+    .article-details{
+      a{
+        @extend %a-hover;
+      }
+    }
+  }
+}
+
+

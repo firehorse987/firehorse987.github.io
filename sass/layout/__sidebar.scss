@@ -1,0 +1,48 @@
+.side-box {
+  z-index:9999999999999999999999999999999999;
+  position: relative;
+  background:  {
+    image: url("../img/backgrounds/content.svg");
+    size: cover;
+    repeat: no-repeat;
+  };
+  .side-triangle {
+    position: absolute;
+    top:-70px;
+    right:0;
+    z-index: -1!important;
+  }
+  .side-title-bar{
+    @include box-glow(rgba($brand-color,.5),0,-10px,20px);
+    height: 60px;
+    padding: 20px 20px;
+    border: {
+      top-left-radius: $card-radius;
+      top-right-radius: $card-radius;
+    };
+    .side-title {
+      font-family: iransans-Medium;
+      font-size: 18px;
+      margin-bottom: 0!important;
+    }
+    position: relative;
+
+  }
+
+  .sidebar-item {
+      font-size: 14px;
+      @include text-color(.4);
+      a {
+        font-size: 14px;
+        @extend %a-hover;
+        @include text-color(.5);
+      }
+     img {
+       border-radius: 0!important;
+     }
+    &:last-child {
+      border-bottom: none!important;
+    }
+  }
+
+}

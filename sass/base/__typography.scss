@@ -1,0 +1,43 @@
+@each $font-weight in $font-weight-sans {
+    @font-face {
+      font-family: 'iransans-' + $font-weight;
+      src: url($font-directory + $iran-sans + $font-weight + '.eot'); /* IE9 Compat Modes */
+      src:
+      url($font-directory + $iran-sans + $font-weight + '.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url($font-directory + $iran-sans + $font-weight + ".woff2") format('woff2'), /* Super Modern Browsers */
+      url($font-directory + $iran-sans + $font-weight + '.woff') format('woff'), /* Pretty Modern Browsers */
+      url($font-directory + $iran-sans + $font-weight + '.ttf')  format('truetype');/*  Safari, Android, iOS */
+      font-weight: normal;
+    }
+}
+
+@each $font-weight in $font-weight-sans {
+  @font-face {
+    font-family: 'iransans-num-' + $font-weight;
+    src: url($font-directory + $iran-sans-num + $font-weight + '.eot'); /* IE9 Compat Modes */
+    src:
+            url($font-directory + $iran-sans-num + $font-weight + '.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url($font-directory + $iran-sans-num + $font-weight + ".woff2") format('woff2'), /* Super Modern Browsers */
+            url($font-directory + $iran-sans-num + $font-weight + '.woff') format('woff'), /* Pretty Modern Browsers */
+            url($font-directory + $iran-sans-num + $font-weight + '.ttf')  format('truetype');/*  Safari, Android, iOS */
+    font-weight: normal;
+  }
+}
+
+@each $font-weight in $font-weight-yekan {
+  @font-face {
+    font-family: 'iranyekan-' + $font-weight;
+    src: url($font-directory + $iran-yekan + $font-weight + '.eot'); /* IE9 Compat Modes */
+    src:
+    url($font-directory + $iran-yekan + $font-weight + '.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url($font-directory + $iran-yekan + $font-weight + ".woff2") format('woff2'), /* Super Modern Browsers */
+    url($font-directory + $iran-yekan + $font-weight + '.woff') format('woff'); /* Pretty Modern Browsers */
+    //url($font-directory + $iran-yekan + $font-weight + '.ttf')  format('truetype');/*  Safari, Android, iOS */
+    font-weight: normal;
+  }
+}
+
+
+*{
+  font-family: iransans-Medium , Arial , iransans-num-Medium;
+}

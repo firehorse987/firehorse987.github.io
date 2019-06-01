@@ -1,0 +1,18 @@
+%a-hover{
+  @include text-color(.5);
+  @include transition();
+  &:hover{
+    color: rgba($brand-color-light,0.5);
+  }
+}
+
+%Circle-button {
+  border-radius: 200px;
+  padding: 18px 50px;
+  color: white;
+  outline: none!important;
+}
+
+%brand-border {
+  border-bottom: 3px solid rgba($brand-color,.1);
+}

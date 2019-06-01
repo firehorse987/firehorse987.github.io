@@ -1,0 +1,19 @@
+.bottom-header {
+  z-index: 0;
+  @include  background("../img/backgrounds/page-title.svg");
+  height: 585px;
+  position: relative;
+  @include opacity(0.9);
+  .page-title{
+    color: white;
+    font : {
+      size: 4.5rem;
+      family: iransans-Light;
+      weight: bolder;
+    }
+    top: -40px;
+    position: relative;
+    z-index: 999999999;
+  }
+
+}

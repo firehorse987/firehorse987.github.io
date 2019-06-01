@@ -1,0 +1,30 @@
+.pagination {
+  font-family: iransans-num-Medium !important;
+  color: $brand-secondary-color!important;
+  direction: ltr ;
+  position: relative;
+  z-index: 99999999999999;
+   a {
+     @include align(center,center);
+     font-family: iransans-num-Medium !important;
+     font-size: 1.4rem;
+     border-radius:10px;
+     margin: 10px;
+     background: white;
+     width: 60px;
+     height: 60px;
+     min-width:60px;
+     min-height:60px;
+     @include box-glow(rgba($brand-secondary-color,.3) , 1px , 3px , 20px);
+     @include transition(all , .7s);
+     &:hover {
+       color: white!important;
+       background-color: $brand-secondary-color;
+     }
+   }
+  .current {
+    color: white!important;
+    @include linear-gardient(right,$brand-secondary-color,lighten($brand-secondary-color,10));
+    @include box-glow(rgba($brand-secondary-color,.3) , 1px , 3px , 20px);
+  }
+}

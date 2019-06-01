@@ -1,0 +1,43 @@
+$colors: red,orange,blue,green,yellow,purple,pink,brand,secondary-brand;
+@each $color in $colors {
+  .#{$color}-color{
+    color: creative-color($color);
+  }
+  .#{$color}-bg-color{
+    @include linear-gardient(left , creative-color($color));
+  }
+}
+
+.white{
+  color: white;
+}
+
+.card-radius {
+  border-radius: $card-radius;
+}
+
+.card-box-glow {
+  @include box-glow(rgba($brand-color,.2),0px,5px,20px);
+}
+
+.brand-gardient {
+  @include linear-gardient(left , $brand-color , $brand-color-light);
+}
+
+.bord-bottom {
+  border-bottom: 3px solid rgba($brand-color,.1);
+}
+
+.footer-bord-bottom {
+  border-bottom: 3px solid #7567BB;
+}
+
+.footer-text-color {
+  color: #CCC7E3;
+}
+
+.footer-decription {
+  font-size:1rem;
+  font-family: iransans-num-Medium;
+  line-height: 2.3;
+}

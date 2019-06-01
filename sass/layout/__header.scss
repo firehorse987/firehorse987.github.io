@@ -1,0 +1,44 @@
+.header {
+  @include background("../img/backgrounds/header.svg");
+  position: relative;
+  height: 14vw;
+  @include box-glow(rgba($brand-color,.53), 0 ,3px , 36px);
+
+  > .top-header {
+    z-index: 99999999999;
+    height: 14vw;
+  }
+}
+
+.logo-image {
+  height: 10vw;
+}
+
+.main-nav{
+  > ul{
+    padding: 0;
+    margin: 0;
+    > li{
+      display: inline;
+      > a {
+        padding : 20px;
+        font : {
+          size: 1.3vw;
+          weight: lighter;
+        }
+      }
+      @include text-color(0.55);
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-nav {
+    display: none!important;
+  }
+  .header-button {
+    display: none!important;
+  }
+}
+
+//rgba(38,22,109,0.63)

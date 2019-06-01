@@ -1,0 +1,29 @@
+
+.brand-button {
+  @extend %Circle-button;
+  color: white!important;
+  @include linear-gardient(right, $brand-secondary-color , lighten($brand-secondary-color,10));
+  right: .6vw;
+  position: relative;
+  @include box-glow(rgba($brand-secondary-color,1));
+  @include transition(box-shadow,.5s , ease-out);
+  &:hover {
+    background-position: 205px;
+    @include box-glow(rgba($brand-secondary-color,.7),0,0,90px);
+    @include transition(all,.5s , ease-out);
+  }
+}
+
+.content-button {
+  @extend %Circle-button;
+  color: white!important;
+  @include linear-gardient(right, $brand-color, lighten($brand-color-light,10));
+  @include box-glow(rgba($brand-color,.6) , 0 , 0 ,20px);
+  @include transition(box-shadow,.5s , ease-out);
+  &:hover {
+    background-position: 404px;
+    @include box-glow(rgba($brand-color,.8),0,0,40px);
+    @include transition(all,.5s , ease-out);
+  }
+
+}

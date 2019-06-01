@@ -1,0 +1,12 @@
+.brand-photo-box {
+  img {
+    border-radius: 10px;
+    @include box-glow(rgba($brand-color,.5),0 ,0 ,25px);
+    @include transition(all, .5s);
+    &:hover{
+      @include box-glow(rgba($brand-color,.6),0 ,0 ,40px);
+      //@include filter(brightness(70%));
+    }
+  }
+}
+

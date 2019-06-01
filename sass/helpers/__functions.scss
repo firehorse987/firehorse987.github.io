@@ -1,0 +1,47 @@
+@function creative-color($color) {
+  @if($color==red){
+    @return #E74C3C;
+  }
+  @elseif($color==blue){
+    @return #6C5CE7;
+  }
+  @elseif($color==green){
+    @return #00B894;
+  }
+  @elseif($color==yellow){
+    @return #F1C40F;
+  }
+  @else if($color==purple){
+    @return #8E44AD;
+  }
+  @else if($color==brand){
+    @return $brand-color
+  }
+  @else if($color==secondary-brand){
+    @return $brand-secondary-color;
+  }
+  @else if($color==brand-light){
+    @return $brand-color-light;
+  }
+  @else {
+    @return $brand-color;
+  }
+}
+
+//@function bubble-color($num){
+//  @if($num==1){
+//    @return #BEE3F1;
+//  }
+//  @elseif($num==2){
+//    @return #64D0C8;
+//  }
+//  @elseif($num==3){
+//    @return #D2F1E3;
+//  }
+//  @elseif($num==4){
+//    @return #A29BFE;
+//  }
+//  @else {
+//    @return $brand-color;
+//  }
+//}

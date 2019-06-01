@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="439.345" height="226.546" viewBox="0 0 439.345 226.546">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.972" y1="0.938" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#29186b"/>
+      <stop offset="1" stop-color="#65599a"/>
+    </linearGradient>
+    <filter id="Path_25" x="0" y="0" width="439.345" height="226.546" filterUnits="userSpaceOnUse">
+      <feOffset dy="-20" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="23" result="blur"/>
+      <feFlood flood-color="#65599a" flood-opacity="0.522"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="mortarboard_1_" data-name="mortarboard (1)" transform="translate(76 -113)">
+    <g transform="matrix(1, 0, 0, 1, -76, 113)" filter="url(#Path_25)">
+      <path id="Path_25-2" data-name="Path 25" d="M3.852,88.547H297.495c5.136-2.642,5.136-11.035,0-13.679L153.331.655a5.734,5.734,0,0,0-5.315,0L3.852,74.869c-5.134,2.644-5.134,11.037,0,13.679Zm0,0" transform="translate(69 89)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

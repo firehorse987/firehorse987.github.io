@@ -1,0 +1,158 @@
+
+@mixin align($option1:center,$option2:false,$self:false){
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  @if($option1==center) {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  @if($option1==start){
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  @if($option2==center) {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  @if($option2==end) {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+}
+
+@mixin text-color($num){
+  color: rgba(0,0,0,$num);
+}
+
+@mixin pos-center($opt1:center,$opt2:false){
+  @if($opt1==center){
+    left:50%;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+  }
+  @if($opt2==center){
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+}
+
+@mixin transition($property:all , $value:.3s , $smooth:ease ){
+  -webkit-transition:$property $value $smooth;
+  -o-transition:$property $value $smooth;
+  transition:$property $value $smooth;
+}
+
+@mixin box-glow($color , $x : 0 , $y : 0 , $blur : 80px ) {
+  -webkit-box-shadow : $x $y $blur $color;
+  box-shadow : $x $y $blur $color;
+}
+
+@mixin linear-gardient($direction,$color1,$color2 : lighten($color1,10)) {
+  background-image: -webkit-gradient(linear, left top, right top, from($color1) , to($color2));
+  background-image: -webkit-linear-gradient($direction, $color1 , $color2);
+  background-image: -o-linear-gradient($direction, $color1 , $color2);
+  background-image: linear-gradient(to $direction, $color1 , $color2)
+}
+
+@mixin font($font-size:17 , $font-family:iransans-regular, $weight: normal  ) {
+  font :{
+    size: $font-size + "px";
+    family: $font-family;
+    weight: $weight;
+  }
+}
+
+@mixin background($url,$repeat:no-repeat,$position: unset , $size:cover , $attachment:unset) {
+  background: {
+    image: url("#{$url}");
+    repeat: $repeat;
+    position: $position;
+    size :$size;
+    attachment: $attachment;
+  };
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie); //IE8
+}
+
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+@mixin absolute($args: '') {
+  @include position(absolute, $args);
+}
+
+@mixin fixed($args: '') {
+  @include position(fixed, $args);
+}
+
+@mixin relative($args: '') {
+  @include position(relative, $args);
+}
+
+@mixin prefix($prop, $value) {
+  -webkit-#{$prop}: #{$value};
+  -moz-#{$prop}: #{$value};
+  -ms-#{$prop}: #{$value};
+  -o-#{$prop}: #{$value};
+  #{$prop}: #{$value};
+}
+
+@mixin arrow($direction: down, $size: 5px, $color: #555) {
+  width: 0;
+  height: 0;
+  @if ($direction == left) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  }
+  @else if ($direction == right) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  }
+  @else if ($direction == down) {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  }
+  @else {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
+}
+
+@mixin raduis($px) {
+  border-radius: $px + px;
+
+}
+
+@mixin filter($property) {
+  -webkit-filter:$property;
+  filter:$property
+}
+
+@mixin dimensions($height){
+  height : $height + px;
+  width: $height + px;
+};
+
